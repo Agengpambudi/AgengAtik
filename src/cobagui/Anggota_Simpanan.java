@@ -127,11 +127,11 @@ public class Anggota_Simpanan extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "No Simpanan", "Tanggal", "Anggota", "Nominal"
+                "No Simpanan", "Tanggal", "Nominal", "Total Simpanan"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Double.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Double.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {

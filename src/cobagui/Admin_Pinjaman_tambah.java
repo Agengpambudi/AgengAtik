@@ -30,7 +30,6 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -47,8 +46,6 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
@@ -71,7 +68,7 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 100, 40));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 100, 40));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/simpanan.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -79,15 +76,7 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 100, 40));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/data pegawai.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 100, 40));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, 40));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/data anggota.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +84,7 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 100, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 100, 40));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/profil saya.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +92,7 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 100, 40));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, 40));
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/beranda.png"))); // NOI18N
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -140,29 +129,25 @@ public class Admin_Pinjaman_tambah extends javax.swing.JFrame {
 
         jLabel6.setText("Tanggal");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 120, -1));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 140, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 120, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 140, -1));
 
-        jLabel7.setText("Anggota");
+        jLabel7.setText("ID Anggota");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 140, -1));
 
         jLabel8.setText("Nominal");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 120, -1));
-
-        jLabel9.setText("Angsuran");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 50, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 140, -1));
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/SIMPAN.png"))); // NOI18N
-        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 70, 30));
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 70, 30));
 
         jButton10.setText("KEMBALI");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -209,11 +194,6 @@ new Admin_Profil ().setVisible (true);
        this.dispose ();
 new Admin_dataAnggota ().setVisible (true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     this.dispose ();
-new Admin_dataPegawai ().setVisible (true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
    this.dispose ();
@@ -269,7 +249,6 @@ new Admin_Pinjaman ().setVisible (true);
     private javax.swing.JLabel background;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -287,10 +266,8 @@ new Admin_Pinjaman ().setVisible (true);
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

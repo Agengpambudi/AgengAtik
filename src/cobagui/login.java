@@ -5,6 +5,16 @@
  */
 package cobagui;
 
+import cobagui.koneksidatabase;
+import java.awt.Dimension;
+import java.awt.HeadlessException;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,9 +23,14 @@ import javax.swing.JOptionPane;
  */
 public class login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form login
-     */
+    public Connection conn;
+    public Statement cn;
+    koneksidatabase koneksi;
+    Statement statement;
+    ResultSet resultSet;
+    public static int kondisiLogin = 3;
+    public static String userLogin = "Tidak Terdeteksi";
+
     public login() {
         initComponents();
     }
@@ -77,36 +92,87 @@ public class login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void koneksi() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "chawoksz28");
+            cn = conn.createStatement();
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Koneksi Gagal");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void login() {
+        try {
+            koneksi();
+            String sql = "SELECT * FROM \"Login\" WHERE username='" + username.getText() + "' and password='" + password.getText() + "' ";
+            //String sql2 = "Select * from Login";
+            ResultSet rs;
+            rs = cn.executeQuery(sql);
+            //rs = cn.executeQuery(sql2);
+            if (rs.next()) {
+                String users = rs.getString("userlevel");
+                int a = Integer.parseInt(users);
+                if (a == 1) {
+                    new Admin_Beranda().show();
+                    this.dispose();
+                } else if (a == 2) {
+                    new Anggota_Beranda().show();
+                } else if (a == 3) {
+                    new Ketua_Beranda().show();
+                }
+                JOptionPane.showMessageDialog(null, "Selamat Datang " + username.getText() + "!");
+//                new Home().show();
+            } else {
+                JOptionPane.showMessageDialog(null, "Username atau Password Salah !");
+            }
+
+        } catch (SQLException | HeadlessException e) {
+            JOptionPane.showMessageDialog(null, e);
+
+        }
+    }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         String user = username.getText ();
-        String pass = password.getText ();
-         if (user.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(this, "Isi nama dahulu");
-        }else if (pass.equalsIgnoreCase("")) {
+        login();
+        String user = username.getText();
+        String pass = password.getText();
+        if (user.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "Isi username dahulu");
+        } else if (pass.equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(this, "isi Password Dahulu");
-        }else { if (user.equals("admin")){
-       new Admin_Beranda().setVisible(true);
-        dispose();
-        } else if (user.equals("anggota")){
-        new Anggota_Beranda ().setVisible(true);
-            dispose();
-        } else  if (user.equals("ketua")){
-        new Ketua_Beranda ().setVisible(true);
-            dispose();
-        }else{
-        JOptionPane.showMessageDialog(this, "username salah !");
         }
-        }
-          
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
+        String user = username.getText();
+        String pass = password.getText();
+        if (user.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "Isi username dahulu");
+        } else if (pass.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "isi Password Dahulu");
+        } 
     }//GEN-LAST:event_passwordActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        // TODO add your handling code here:
+        String user = username.getText();
+        String pass = password.getText();
+        if (user.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "Isi username dahulu");
+        } else if (pass.equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "isi Password Dahulu");
+//        }else { if (user.equals("admin")){
+//        new Admin_Beranda().setVisible(true);
+//        } else if (user.equals("anggota")){
+//        new Anggota_Beranda ().setVisible(true);
+//            dispose();
+//        } else  if (user.equals("ketua")){
+//        new Ketua_Beranda ().setVisible(true);
+//            dispose();
+        } 
+
     }//GEN-LAST:event_usernameActionPerformed
 
     /**

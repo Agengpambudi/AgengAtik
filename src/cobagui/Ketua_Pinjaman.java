@@ -40,6 +40,8 @@ public class Ketua_Pinjaman extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton13 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,11 +138,11 @@ public class Ketua_Pinjaman extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "No Pinjaman", "Tanggal", "Anggota", "Nominal", "Angsuran"
+                "Tanggal", "No Pinjaman", "ID Anggota", "Nominal", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -149,7 +151,20 @@ public class Ketua_Pinjaman extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, 280));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, 240));
+
+        jButton13.setForeground(new java.awt.Color(240, 240, 240));
+        jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/magnifying-glass (1).png"))); // NOI18N
+        jButton13.setOpaque(false);
+        getContentPane().add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, 30, 30));
+
+        jTextField1.setOpaque(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 80, 420, 30));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cobagui/PBO Layout FIX 2.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 400));
@@ -192,6 +207,10 @@ new login ().setVisible (true);
         new Ketua_Laporan ().setVisible (true);
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,6 +248,7 @@ new login ().setVisible (true);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -242,5 +262,6 @@ new login ().setVisible (true);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
